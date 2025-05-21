@@ -2,15 +2,21 @@
 	"name": "openws-ts",
 	"version": "0.0.1",
 	"type": "module",
-	"main": "index.ts",
 	"scripts": {
 		"test": "bun test",
 		"coverage": "bun test --coverage",
 		"fmt": "biome check --write .",
 		"lint": "biome check .",
+		"build": "tsc && tsup",
 		"knip": "knip"
 	},
 	"license": "MIT",
+	"exports": {
+		"./client": {
+			"import": "./dist/client/index.js",
+			"types": "./dist/client/index.d.ts"
+		}
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/openws-kit/openws-ts.git"
@@ -19,7 +25,7 @@
 		"@biomejs/biome": "1.9.4",
 		"@types/bun": "latest",
 		"@types/node": "^22.15.21",
-		"knip": "^5.57.0",
+		"knip": "^5.57.1",
 		"tsup": "^8.5.0",
 		"typescript": "^5.8.3"
 	},
