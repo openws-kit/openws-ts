@@ -1,5 +1,5 @@
 {
-	"name": "openws-ts",
+	"name": "@openws/openws-ts",
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
@@ -7,11 +7,15 @@
 		"coverage": "bun test --coverage",
 		"fmt": "biome check --write .",
 		"lint": "biome check .",
-		"build": "tsc && tsup",
+		"build": "tsc -b && tsup",
 		"knip": "knip"
 	},
 	"license": "MIT",
 	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		},
 		"./client": {
 			"import": "./dist/client/index.js",
 			"types": "./dist/client/index.d.ts"
@@ -25,7 +29,7 @@
 		"@biomejs/biome": "1.9.4",
 		"@types/bun": "latest",
 		"@types/node": "^22.15.21",
-		"knip": "^5.57.1",
+		"knip": "^5.57.2",
 		"tsup": "^8.5.0",
 		"typescript": "^5.8.3"
 	},
