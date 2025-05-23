@@ -1,7 +1,15 @@
 {
 	"name": "@openws/openws-ts",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"type": "module",
+	"author": "skewb1k",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/openws-kit/openws-ts.git"
+	},
+	"bugs": "https://github.com/openws-kit/openws-ts/issues",
+	"homepage": "https://github.com/openws-kit/openws-ts#readme",
 	"scripts": {
 		"test": "bun test",
 		"coverage": "bun test --coverage",
@@ -10,7 +18,6 @@
 		"build": "tsc -b && tsup",
 		"knip": "knip"
 	},
-	"license": "MIT",
 	"exports": {
 		".": {
 			"import": "./dist/index.js",
@@ -21,10 +28,7 @@
 			"types": "./dist/client/index.d.ts"
 		}
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/openws-kit/openws-ts.git"
-	},
+	"files": ["dist", "package.json", "README.md", "LICENSE"],
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@types/bun": "latest",
