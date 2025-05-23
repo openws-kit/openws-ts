@@ -1,4 +1,14 @@
-export async function asyncOpenWS(url: string): Promise<WebSocket> {
+/**
+ * Establishes a WebSocket connection asynchronously and returns the connected instance.
+ *
+ * @param url - The WebSocket server URL.
+ * @returns A Promise that resolves with a connected WebSocket instance.
+ *
+ * @throws Will reject with an error string if the connection fails.
+ * - `"Wrong URL"` if the server cannot be reached (code 1006).
+ * - `"Unknown error"` for other closure reasons before opening.
+ */
+export async function openWebSocket(url: string): Promise<WebSocket> {
 	return new Promise((resolve: (val: WebSocket) => void, reject) => {
 		const ws = new WebSocket(url);
 

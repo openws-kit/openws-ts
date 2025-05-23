@@ -1,4 +1,4 @@
 import RpcClient from "./rpc/rpcclient";
-import { asyncOpenWS } from "./ws";
+import { openWebSocket } from "./ws";
 
-export { asyncOpenWS, RpcClient };
+export { openWebSocket as asyncOpenWS, RpcClient };
