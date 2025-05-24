@@ -17,6 +17,8 @@ jobs:
           bun-version: latest
       - name: Install deps
         run: bun install --frozen-lockfile
+      - name: Run ci checks
+        run: bun ci
       - name: Build
         run: bun run build
       - uses: actions/setup-node@v4

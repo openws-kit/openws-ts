@@ -1,6 +1,6 @@
 {
 	"name": "@openws/openws-ts",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"type": "module",
 	"author": "skewb1k",
 	"license": "MIT",
@@ -16,7 +16,8 @@
 		"fmt": "biome check --write .",
 		"lint": "biome check .",
 		"build": "tsc -b && tsup",
-		"knip": "knip"
+		"knip": "knip",
+		"ci": "tsc && bun lint && bun test && knip"
 	},
 	"exports": {
 		".": {
@@ -31,13 +32,17 @@
 	"files": ["dist", "package.json", "README.md", "LICENSE"],
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@types/bun": "latest",
+		"@types/bun": "^1.2.14",
 		"@types/node": "^22.15.21",
 		"knip": "^5.57.2",
 		"tsup": "^8.5.0",
-		"typescript": "^5.8.3"
+		"typescript": "^5.8.3",
+		"vitest": "^3.1.4"
 	},
 	"peerDependencies": {
 		"typescript": "^5.8.3"
+	},
+	"dependencies": {
+		"zod": "^3.25.28"
 	}
 }

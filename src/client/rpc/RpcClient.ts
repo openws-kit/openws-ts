@@ -89,14 +89,10 @@ export default class RpcClient {
 	 *
 	 * @param raw - Raw JSON message string.
 	 */
-	public receive(raw: string): void {
+	public handle(raw: string): void {
 		let message: unknown;
 
-		try {
-			message = JSON.parse(raw);
-		} catch {
-			return;
-		}
+		message = JSON.parse(raw);
 
 		if (!message || typeof message !== "object") return;
 
